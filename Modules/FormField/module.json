@@ -1,0 +1,13 @@
+{
+    "name": "FormField",
+    "alias": "formfield",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\FormField\\Providers\\FormFieldServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,63 @@
+@include('includes.header')
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+   add Category
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Add Category</h4>
+        </div>
+
+        <div class="modal-body">
+          <form method="POST" action="{{ route('addcategory') }}">
+            @csrf
+            <div class="form-group">
+              <label for="exampleInputEmail1">Category name</label>
+              <input type="text" name="category_name" class="form-control" id="categoryname" placeholder="category name">
+            </div>
+            <button type="submit" class="btn btn-default">Save</button>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br>
+<br>
+<br>
+<div class="container">
+@if($catdata)
+@foreach ($catdata as $cat )
+
+    <div class="col-md-4">
+        <a class="btn btn-primary" role="button" data-toggle="collapse" href="#category{{ $cat->id }}" aria-expanded="false" aria-controls="collapseExample">
+            {{ $cat->name }}
+        </a>
+    </div>
+    @endforeach
+</div>
+<div class="container">
+@foreach ($catdata as $cat )
+<div class="col-md-4">
+  <div class="collapse" id="category{{ $cat->id }}">
+    <div class="well">
+      {{ $cat->name }}
+    </div>
+  </div>
+</div>
+@endforeach
+</div>
+@endif
+
+ @include('includes.footer')

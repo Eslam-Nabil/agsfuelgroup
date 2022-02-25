@@ -1,0 +1,13 @@
+{
+    "name": "Submit",
+    "alias": "submit",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Submit\\Providers\\SubmitServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

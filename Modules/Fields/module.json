@@ -1,0 +1,13 @@
+{
+    "name": "Fields",
+    "alias": "fields",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Fields\\Providers\\FieldsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
